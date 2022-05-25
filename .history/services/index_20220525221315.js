@@ -86,9 +86,8 @@ export const getCategories = async () => {
       categories {
         name
         slug
-      }
     }
+  }
+  
   `
-  const results = await request(graphqlAPI, query)
-  return results.categories
 }

@@ -89,6 +89,4 @@ export const getCategories = async () => {
       }
     }
   `
-  const results = await request(graphqlAPI, query)
-  return results.categories
 }
