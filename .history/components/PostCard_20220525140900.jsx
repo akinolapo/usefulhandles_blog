@@ -4,7 +4,7 @@ const PostCard = ({ post }) => {
   return (
     <div>
         {post.title}
-        {post.excerpt}
+        {post.e}
     </div>
   )
 }
