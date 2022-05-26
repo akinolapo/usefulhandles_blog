@@ -12,8 +12,6 @@ const CommentsForm = ({slug}) => {
   const handleCommentSubmission = () => {
     setError(false)
     const {value: comment} = commentEl.current
-    const {value: name} = nameEl.current
-    const {value: email} = emailEl.current
     if(!commentEl.current.value || !nameEl.current.value || !emailEl.current.value){
       setError(true)
       return

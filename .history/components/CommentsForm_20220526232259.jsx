@@ -10,17 +10,18 @@ const CommentsForm = ({slug}) => {
   const storeDataEl = useRef()
 
   const handleCommentSubmission = () => {
-    setError(false)
-    const {value: comment} = commentEl.current
-    const {value: name} = nameEl.current
-    const {value: email} = emailEl.current
-    if(!commentEl.current.value || !nameEl.current.value || !emailEl.current.value){
-      setError(true)
-      return
+    setError(false);
+    const { name, email, comment, storeData } = formData;
+    if (!name || !email || !comment) {
+      setError(true);
+      return;
     }
-
-    const commentObj = {name, emil, comment, slug}
-  }
+    const commentObj = {
+      name,
+      email,
+      comment,
+      slug,
+    };
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
       <h3 className='text-xl mb-8 font-semibold border-b pd-4'>Comment Form</h3>

@@ -8,19 +8,6 @@ const CommentsForm = ({slug}) => {
   const nameEl = useRef()
   const emailEl = useRef()
   const storeDataEl = useRef()
-
-  const handleCommentSubmission = () => {
-    setError(false)
-    const {value: comment} = commentEl.current
-    const {value: name} = nameEl.current
-    const {value: email} = emailEl.current
-    if(!commentEl.current.value || !nameEl.current.value || !emailEl.current.value){
-      setError(true)
-      return
-    }
-
-    const commentObj = {name, emil, comment, slug}
-  }
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
       <h3 className='text-xl mb-8 font-semibold border-b pd-4'>Comment Form</h3>
@@ -35,8 +22,7 @@ const CommentsForm = ({slug}) => {
       </div>
       {error && <p className='text-xs text-red-500'>All fields are required</p>}
       <div className="mt-8">
-        <button className='transition duration-500 ease hover:bg-indigo-900 inline-block bg-pink-600 text-lg rounded-full text-white px-8 py-3 cursor-pointer' type='button' onClick={handleCommentSubmission}>Post Comment</button>
-        {showSuccessMessage && <span className='text-xl float-right font-semibold mt-3 text-green-500'>Comment Submitted for review</span>}
+        <button type='button'></button>
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4"></div>
     </div>
