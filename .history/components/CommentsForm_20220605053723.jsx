@@ -21,14 +21,6 @@ const CommentsForm = ({slug}) => {
     }
 
     const commentObj = {name, email, comment, slug}
-
-    if(storeData){
-      localStorage.setItem('name', name);
-      localStorage.setItem('email', email);
-    } else{
-      localStorage.removeItem('name', name);
-      localStorage.removeItem('email', email);
-    }
   }
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>

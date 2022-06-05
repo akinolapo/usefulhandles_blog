@@ -27,7 +27,7 @@ const CommentsForm = ({slug}) => {
       localStorage.setItem('email', email);
     } else{
       localStorage.removeItem('name', name);
-      localStorage.removeItem('email', email);
+      localStorage.setItem('email', email);
     }
   }
   return (

@@ -14,21 +14,13 @@ const CommentsForm = ({slug}) => {
     const {value: comment} = commentEl.current
     const {value: name} = nameEl.current
     const {value: email} = emailEl.current
-    const {checked: storeData} = storeDataEl.current
+    const {value: storeData} = storeDataEl.current
     if(!comment || !name || !email){
       setError(true)
       return
     }
 
     const commentObj = {name, email, comment, slug}
-
-    if(storeData){
-      localStorage.setItem('name', name);
-      localStorage.setItem('email', email);
-    } else{
-      localStorage.removeItem('name', name);
-      localStorage.removeItem('email', email);
-    }
   }
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
