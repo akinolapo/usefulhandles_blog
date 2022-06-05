@@ -132,6 +132,4 @@ export const submitComment = async(obj) => {
     method: 'POST',
     body: JSON.stringify(obj),
   })
-
-  return result.json()
 }

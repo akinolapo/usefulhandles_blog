@@ -129,9 +129,6 @@ export const getCategories = async () => {
 
 export const submitComment = async(obj) => {
   const result = await fetch('/api/comments', {
-    method: 'POST',
-    body: JSON.stringify(obj),
+    method
   })
-
-  return result.json()
 }

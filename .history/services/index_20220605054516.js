@@ -133,5 +133,5 @@ export const submitComment = async(obj) => {
     body: JSON.stringify(obj),
   })
 
-  return result.json()
+  return
 }
