@@ -30,11 +30,11 @@ const CommentsForm = ({ slug }) => {
     const commentObj = { name, email, comment, slug }
 
     if (storeData) {
-      window.localStorage.setItem('name', name);
-      window.localStorage.setItem('email', email);
+      Window.localStorage.setItem('name', name);
+      Window.localStorage.setItem('email', email);
     } else {
-      window.localStorage.removeItem('name');
-      window.localStorage.removeItem('email');
+      Window.localStorage.removeItem('name', name);
+      Window.localStorage.removeItem('email', email);
     }
 
     submitComment(commentObj)

@@ -13,7 +13,8 @@ const CommentsForm = ({ slug }) => {
 
   useEffect(() =>{
     nameEl.current.value =window.localStorage.getItem('name')
-    nameEl.current.value =window.localStorage.getItem('email')
+    nameEl.current.value =window.localStorage.getItem('name')
+    nameEl.current.value =window.localStorage.getItem('name')
   }, [])
 
   const handleCommentSubmission = () => {
@@ -30,11 +31,11 @@ const CommentsForm = ({ slug }) => {
     const commentObj = { name, email, comment, slug }
 
     if (storeData) {
-      window.localStorage.setItem('name', name);
-      window.localStorage.setItem('email', email);
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
     } else {
-      window.localStorage.removeItem('name');
-      window.localStorage.removeItem('email');
+      localStorage.removeItem('name', name);
+      localStorage.removeItem('email', email);
     }
 
     submitComment(commentObj)
@@ -47,7 +48,7 @@ const CommentsForm = ({ slug }) => {
   }
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
-      <h3 className='text-xl mb-8 font-semibold border-b pd-4'>Leave a Reply</h3>
+      <h3 className='text-xl mb-8 font-semibold border-b pd-4'>Comment Form</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea ref={commentEl} className='p-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700' placeholder='Comment' name='comment'>
         </textarea>

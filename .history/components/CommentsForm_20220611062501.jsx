@@ -31,10 +31,10 @@ const CommentsForm = ({ slug }) => {
 
     if (storeData) {
       window.localStorage.setItem('name', name);
-      window.localStorage.setItem('email', email);
+      localStorage.setItem('email', email);
     } else {
-      window.localStorage.removeItem('name');
-      window.localStorage.removeItem('email');
+      localStorage.removeItem('name', name);
+      localStorage.removeItem('email', email);
     }
 
     submitComment(commentObj)
