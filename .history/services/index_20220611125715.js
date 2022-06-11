@@ -144,11 +144,10 @@ export const getComments = async (slug) => {
     query GetComments($slug: String!) {
       comments(where: {post: {slug: $slug}}){
         name
-        createdAt
-        comment
+        create
       }
     }
   `
   const results = await request(graphqlAPI, query, {slug})
-  return results.comments
+  return results.categories
 }

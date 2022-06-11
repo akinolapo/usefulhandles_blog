@@ -23,12 +23,8 @@ const Comments = ({slug}) => {
             <div key={comment.createdAt} className='border-gray-100 mb-4 pb-4 border-b'>
               <p className='mb-4'>
                 <span className='font-semibold'>{comment.name}</span>
-                {' '}
-                on
-                {' '}
-                {moment(comment.createdAt).format('MMM DD, YYYY')}
+                {''}
               </p>
-              <p className='whitespace-pre-line text-gray-600 w-full'>{parse(comment.comment)}</p>
             </div>
           ))}
         </div>

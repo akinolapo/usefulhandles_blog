@@ -150,5 +150,5 @@ export const getComments = async (slug) => {
     }
   `
   const results = await request(graphqlAPI, query, {slug})
-  return results.comments
+  return results.categories
 }
