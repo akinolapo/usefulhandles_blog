@@ -63,16 +63,9 @@ a {
   box-sizing: border-box;
 }
 
-
-// .codePreview{
-//   font-family: "Source Code Pro", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-//   background-color: rgb(248, 249, 251);
-//   border-radius: 4px;
-//   border: 1px solid rgb(218, 222, 237);
-//   padding: 3px;
-//   line-height: 1.5;
-//   font-size: 14px;
-//   padding: 8px;
-//   white-space: pre-wrap;
-//   margin-bottom: 20px;
-// }
+code{
+  font-family: "Source Code Pro", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: rgb(248, 249, 251);
+  border-radius: 4px;
+    border: 1px solid rgb(218, 222, 237);
+}
