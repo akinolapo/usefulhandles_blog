@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import {PostCard, Categories, PostWidget} from '../components'
 import {getPosts} from '../services'
-
+import {FeaturedPost}
 
 export default function Home ({posts}) {
   return (
