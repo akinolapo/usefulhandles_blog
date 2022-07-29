@@ -6,9 +6,9 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
-        postsConnection(orderBy: createdAt_DESC) {
+        postsConnection {
           edges {
-            node {
+            node(orderBy: createdAt_ASC) {
               author {
                 bio
                 id
@@ -130,7 +130,7 @@ export const getCategories = async () => {
 export const getCategoryPost = async (slug) => {
   const query = gql`
     query GetCategoryPost($slug: String!) {
-      postsConnection(orderBy: createdAt_DESC where: {categories_some: {slug: $slug}}) {
+      postsConnection(where: {categories_some: {slug: $slug}}) {
         edges {
           cursor
           node {

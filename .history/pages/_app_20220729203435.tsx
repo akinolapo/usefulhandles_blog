@@ -5,7 +5,9 @@ import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
+  class MyComponent extend Component<PropsWithChildren<OwnProps>> {
+    ...
+ }
   return (
     <Layout Children={<Component {...pageProps} />}>
     </Layout>

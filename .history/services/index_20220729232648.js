@@ -130,7 +130,7 @@ export const getCategories = async () => {
 export const getCategoryPost = async (slug) => {
   const query = gql`
     query GetCategoryPost($slug: String!) {
-      postsConnection(orderBy: createdAt_DESC where: {categories_some: {slug: $slug}}) {
+      postsConnection(where: {categories_some: {slug: $slug}}) {
         edges {
           cursor
           node {
