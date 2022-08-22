@@ -13,8 +13,6 @@ const CategoryPost = ({ posts }) => {
 
   return (
     <div className="container mx-auto px-10 mb-8">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5462795276187031"
-     crossorigin="anonymous"></script>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8 lg:grid lg:grid-cols-2 lg:gap-4">
           {posts.map((post, index) => (
