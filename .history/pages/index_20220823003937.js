@@ -13,7 +13,7 @@ export default function Home({ posts }) {
         <title>WordPressVee</title>
         <link rel="icon" href="/favicon.png" />
         <meta name="description" content="WordPress How-To Guides and Tutorials. Create, optimize and manage your website effectively without giving up design or function." />
-        <meta name="keywords" content="WordPress, WordPressVee, WordPress Tips, WordPress Themes, WordPress Plugins" />
+        <meta name="keywords" content="WordPress, WordPressVeeWordPress Tips, WordPress Themes, WordPress Plugins" />
         <meta name="p:domain_verify" content="bf026029358a6034db453899e649e032" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5462795276187031"
               crossorigin="anonymous"></script>
