@@ -1,3 +1,13 @@
+import React from "react";
+import fs from "fs";
+
+const Sitemap = () => {};
+
+export const getServerSideProps = ({ res }) => {
+ 
+
+
+
   import React from "react";
   import * as fs from "fs";
   import { getPosts } from "../services";
@@ -6,10 +16,7 @@
   };
   
   export const getServerSideProps = async ({ res }) => {
-    const baseUrl = {
-      development: "http://localhost:3000",
-      production: "https://www.wordpressvee.com",
-    }[process.env.NODE_ENV];
+    const BASE_URL = "http://localhost:3000";
   
     const staticPaths = fs
       .readdirSync("pages")
@@ -24,13 +31,13 @@
         ].includes(staticPage);
       })
       .map((staticPagePath) => {
-        return `${baseUrl}/${staticPagePath}`;
+        return `${BASE_URL}/${staticPagePath}`;
       });
   
       const posts = await getPosts()
       const dynamicPaths = posts.map( post => {
     
-        return `${baseUrl}/post/${post.node.slug}`
+        return `${BASE_URL}/post/${post.node.slug}`
         
       })
      

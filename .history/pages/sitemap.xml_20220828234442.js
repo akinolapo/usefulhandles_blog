@@ -30,7 +30,7 @@
       const posts = await getPosts()
       const dynamicPaths = posts.map( post => {
     
-        return `${baseUrl}/post/${post.node.slug}`
+        return `${BASE_URL}/post/${post.node.slug}`
         
       })
      
