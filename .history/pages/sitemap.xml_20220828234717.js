@@ -1,3 +1,16 @@
+import React from "react";
+import fs from "fs";
+
+const Sitemap = () => {};
+
+export const getServerSideProps = ({ res }) => {
+  const baseUrl = {
+    development: "http://localhost:3000",
+    production: "",
+  }[process.env.NODE_ENV];
+
+
+
   import React from "react";
   import * as fs from "fs";
   import { getPosts } from "../services";

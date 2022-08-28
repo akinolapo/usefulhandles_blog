@@ -1,3 +1,4 @@
+
   import React from "react";
   import * as fs from "fs";
   import { getPosts } from "../services";
@@ -6,7 +7,10 @@
   };
   
   export const getServerSideProps = async ({ res }) => {
-    const BASE_URL = "https://www.wordpressvee.com";
+    const baseUrl = {
+      development: "http://localhost:3000",
+      production: "https://www.wordpressvee.com",
+    }[process.env.NODE_ENV];
   
     const staticPaths = fs
       .readdirSync("pages")

@@ -6,7 +6,10 @@
   };
   
   export const getServerSideProps = async ({ res }) => {
-    const BASE_URL = "https://www.wordpressvee.com";
+    const baseUrl = {
+      development: "http://localhost:3000",
+      production: "https://www.wordpressvee.com",
+    }[process.env.NODE_ENV];
   
     const staticPaths = fs
       .readdirSync("pages")
@@ -21,7 +24,7 @@
         ].includes(staticPage);
       })
       .map((staticPagePath) => {
-        return `${BASE_URL}/${staticPagePath}`;
+        return `${baseUrl}/${staticPagePath}`;
       });
   
       const posts = await getPosts()

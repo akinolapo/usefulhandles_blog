@@ -1,3 +1,13 @@
+import React from "react";
+import fs from "fs";
+
+const Sitemap = () => {};
+
+export const getServerSideProps = ({ res }) => {
+ 
+
+
+
   import React from "react";
   import * as fs from "fs";
   import { getPosts } from "../services";
@@ -6,7 +16,7 @@
   };
   
   export const getServerSideProps = async ({ res }) => {
-    const BASE_URL = "https://www.wordpressvee.com";
+    const BASE_URL = "http://localhost:3000";
   
     const staticPaths = fs
       .readdirSync("pages")
