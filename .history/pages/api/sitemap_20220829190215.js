@@ -1,11 +1,15 @@
-  import React from "react";
-  import * as fs from "fs";
-  import { getPosts } from "../services";
-  const Sitemap = () => {
-    return null;
-  };
-  
-  export const getServerSideProps = async ({ res }) => {
+import React from "react";
+import * as fs from "fs";
+
+
+export default function handler(req, res) {
+
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/xml')
+    
+    // Instructing the Vercel edge to cache the file
+    res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600')
+
     const BASE_URL = "https://www.wordpressvee.com";
   
     const staticPaths = fs
@@ -24,7 +28,7 @@
         return `${BASE_URL}/${staticPagePath}`;
       });
   
-      const posts = await getPosts()
+      const posts = await getPost
       const dynamicPaths = posts.map( post => {
     
         return `${BASE_URL}/post/${post.node.slug}`
@@ -33,9 +37,10 @@
      
   
     const allPaths = [...staticPaths, ...dynamicPaths];
-  
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    // generate sitemap here
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${allPaths
           .map((url) => {
             return `
@@ -48,16 +53,7 @@
             `;
           })
           .join("")}
-      </urlset>
-    `;
-  
-    res.setHeader("Content-Type", "text/xml");
-    res.write(sitemap);
-    res.end();
-  
-    return {
-      props: {},
-    };
-  };
-  
-  export default Sitemap;
+      </urlset>`
+
+  res.end(xml)
+}
