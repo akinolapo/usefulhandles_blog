@@ -1,12 +1,13 @@
-  import React from "react";
-  import * as fs from "fs";
-  import { getPosts } from "../services";
-  const Sitemap = () => {
-    return null;
-  };
-  
-  export const getServerSideProps = async ({ res }) => {
-    const BASE_URL = "https://www.wordpressvee.com";
+export default function handler(req, res) {
+
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'text/xml')
+      
+      // Instructing the Vercel edge to cache the file
+      res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600')
+      
+      // generate sitemap here
+      const xml = `<const BASE_URL = "https://www.wordpressvee.com";
   
     const staticPaths = fs
       .readdirSync("pages")
@@ -49,15 +50,7 @@
           })
           .join("")}
       </urlset>
-    `;
+    `;`
   
-    res.setHeader("Content-Type", "text/xml");
-    res.write(sitemap);
-    res.end();
-  
-    return {
-      props: {},
-    };
-  };
-  
-  export default Sitemap;
+    res.end(xml)
+  }
