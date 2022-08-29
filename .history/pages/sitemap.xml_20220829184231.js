@@ -51,9 +51,8 @@
       </urlset>
     `;
   
-    res.statusCode = 200
+    
     res.setHeader("Content-Type", "text/xml");
-    res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600')
     res.write(sitemap);
     res.end();
   
