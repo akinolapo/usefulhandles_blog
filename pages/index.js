@@ -10,13 +10,11 @@ export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>WordPressVee</title>
+        <title>SpankRadio</title>
         <link rel="icon" href="/favicon.png" />
         <meta name="description" content="WordPress How-To Guides and Tutorials. Create, optimize and manage your website effectively without giving up design or function." />
-        <meta name="keywords" content="WordPress, WordPressVee, WordPress Tips, WordPress Themes, WordPress Plugins" />
-        <meta name="p:domain_verify" content="bf026029358a6034db453899e649e032" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5462795276187031"
-              crossorigin="anonymous"></script>
+        <meta name="keywords" content="Spankradio, WordPress, WordPressVee, WordPress Tips, WordPress Themes, WordPress Plugins" />
+        <meta name="google-adsense-account" content="ca-pub-9267352546076218"></meta>
           </Head>
           <FeaturedPosts />
           <div className=" grid grid-cols-1 lg:grid-cols-12 gap-12">
